@@ -83,11 +83,12 @@
 <body class="blue">
   <div class="patter">
 
-  <p>I like the way you conduct yourself</p>
+  <p id="thePatter">I like the way you conduct yourself</p>
 
   <div class="counter"></div>
 
 </div>
+  <script src="/fittext.js"></script>
   <script>
     function getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -124,6 +125,8 @@
     var interval = setInterval(function () {
       decidePatter();
     }, 5000);
+    
+    window.fitText( document.getElementById("thePatter") );
   </script>
 </body>
 </html>
