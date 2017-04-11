@@ -83,7 +83,7 @@
 <body class="blue">
   <div class="patter">
 
-  <p>I like the way you conduct yourself</p>
+  <p id="thePatter">I like the way you conduct yourself</p>
 
   <div class="counter"></div>
 
@@ -123,6 +123,8 @@
     var interval = setInterval(function () {
       decidePatter();
     }, 5000);
+    
+    window.fitText( document.getElementById("thePatter") );
   </script>
 </body>
 </html>
