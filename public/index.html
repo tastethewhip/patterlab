@@ -37,9 +37,20 @@ p:after {
 </head>
 <body>
   <div class="patter">
-  
+
   <p>I like the way you conduct yourself</p>
 
 </div>
+  <script>
+    var patterArray = [
+      'I like the way you conduct yourself',
+      'Succulent',
+      'We are on the same plate here',
+      'For the same'
+    ];
+
+    var randomNumber = Math.floor(Math.random() * patterArray.length);
+    document.querySelector('p').innerHTML = patterArray[randomNumber];
+  </script>
 </body>
 </html>
