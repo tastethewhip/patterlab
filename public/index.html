@@ -63,6 +63,20 @@
       padding-top: 2rem;
     }
 
+    .counter {
+      background: #fff;
+      bottom: 0;
+      left: 0;
+      height: 10px;
+      position: absolute;
+      width: 0;
+    }
+
+    .counter--is-on-the-move {
+      transition: width 4.5s;
+      width: 100%;
+    }
+
   </style>
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:700" rel="stylesheet">
 </head>
@@ -71,26 +85,44 @@
 
   <p>I like the way you conduct yourself</p>
 
+  <div class="counter"></div>
+
 </div>
   <script>
     function getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    var backgroundArray = [
-      'blue', 'red', 'yellow', 'sunset', 'dustygrass'
-    ], randomClass = backgroundArray[getRandomInt(0, backgroundArray.length - 1)];
-    
-    var patterArray = [
-      'I like the way you conduct yourself',
-      'Succulent',
-      'We are on the same plate here',
-      'For the same',
-      'I\'ll dazzle these pricks'
-    ], randomNumber = patterArray[getRandomInt(0, patterArray.length - 1)];
-    
-    document.body.className = randomClass;
-    document.querySelector('p').innerHTML = randomNumber;
+    var counterInterval = null;
+
+    function decidePatter () {
+      clearInterval(counterInterval);
+      var backgroundArray = [
+        'blue', 'red', 'yellow', 'sunset', 'dustygrass'
+      ], randomClass = backgroundArray[getRandomInt(0, backgroundArray.length - 1)];
+
+      var patterArray = [
+        'I like the way you conduct yourself',
+        'Succulent',
+        'We are on the same plate here',
+        'For the same',
+        'I\'ll dazzle these pricks',
+        'It\'s just a bit of professional courtesy'
+      ], randomNumber = patterArray[getRandomInt(0, patterArray.length - 1)];
+
+      document.body.className = randomClass;
+      document.querySelector('p').innerHTML = randomNumber;
+      document.querySelector('.counter').classList.remove('counter--is-on-the-move');
+      counterInterval = setInterval(function() {
+        document.querySelector('.counter').classList.add('counter--is-on-the-move');
+      }, 500);
+    }
+
+    decidePatter();
+
+    var interval = setInterval(function () {
+      decidePatter();
+    }, 5000);
   </script>
 </body>
 </html>
