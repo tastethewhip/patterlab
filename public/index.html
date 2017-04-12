@@ -90,7 +90,6 @@
   <div class="counter"></div>
 
 </div>
-  <script src="fittext.js"></script>
   <script>
     function getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -133,7 +132,7 @@
       counterInterval = setInterval(function() {
         document.querySelector('.counter').classList.add('counter--is-on-the-move');
       }, 500);
-      window.fitText(document.getElementById("thePatter"));
+     
     }
 
     decidePatter();
