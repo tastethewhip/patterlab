@@ -33,6 +33,8 @@
       font-family: "Work Sans", sans-serif;
       background-size: cover;
       height: 100vh;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
     }
 
     .patter {
@@ -44,7 +46,7 @@
     }
 
     p {
-      font-size: 6rem;
+      font-size: 3vmin;
       max-width: 600px;
       text-align: center;
       font-weight: 700;
@@ -66,7 +68,7 @@
     }
 
     .counter {
-      background: #fff;
+      background: rgba(255, 255, 255, .4);
       bottom: 0;
       left: 0;
       height: 10px;
@@ -90,7 +92,6 @@
   <div class="counter"></div>
 
 </div>
-  <script src="/fittext.js"></script>
   <script>
     function getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -113,6 +114,25 @@
         'It&rsquo;s just a bit of professional courtesy',
         'You&rsquo;ve got more chance of getting Stephen Hawking up and running',
         'Love Darren xxx',
+        'Don&rsquo;t lie to those that know you',
+        'Always keep your promises if you want to keep your friends',
+        'Nice of you join to us',
+        'Nice of me to join you',
+        'New doo mate?',
+        'Easy now',
+        'New threads mate?',
+        'Nice of you to...new doo mate?',
+        'Let&rsquo;s talk tactics',
+        'I&rsquo;m knocking my pan in here',
+        'You&rsquo;ve got to speculate to accumulate',
+        'There&rsquo;s money to be made',
+        'Hello, is that the pish hotline?',
+        'He&rsquo;s no got the heart to tell his Da&rsquo; he&rsquo;s getting his shoulders rubbed',
+        'Let&rsquo;s get Drip&rsquo;d up',
+        'There&rsquo;s been a development',
+        'Let&rsquo;s get them racked up',
+        'Once I get the visuals, then I can provide a concrete guess',
+        'There&rsquo;s a place for tables in the current climate'
       ], randomNumber = patterArray[getRandomInt(0, patterArray.length - 1)];
 
       document.body.className = randomClass;
@@ -121,6 +141,7 @@
       counterInterval = setInterval(function() {
         document.querySelector('.counter').classList.add('counter--is-on-the-move');
       }, 500);
+
     }
 
     decidePatter();
@@ -128,8 +149,17 @@
     var interval = setInterval(function () {
       decidePatter();
     }, 5000);
-    
-    window.fitText( document.getElementById("thePatter") );
+
   </script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-345444-68', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </body>
 </html>
